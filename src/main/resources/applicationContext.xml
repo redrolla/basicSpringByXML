@@ -7,17 +7,53 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="com.learningSpring.TestBean">
-        <constructor-arg value="Tom"/>
+    <context:property-placeholder location="classpath:listener.properties"/>
+
+    <bean id="SpaceMarineBean"
+          class="com.learningSpring.SpaceMarine">
     </bean>
 
-    <bean id="creature"
-          class="com.learningSpring.SpaceMarine">
+    <bean id="WolfBean"
+          class="com.learningSpring.Wolf">
+    </bean>
+
+    <bean id="LionBean"
+          class="com.learningSpring.Lion">
     </bean>
 
     <bean id="listener"
         class="com.learningSpring.Listener"  >
-        <constructor-arg ref="creature"/>
+        <constructor-arg ref="SpaceMarineBean"/>
+    </bean>
+
+    <bean id="listenerViaSetter"
+          class="com.learningSpring.Listener">
+        <property name="creature" ref="WolfBean"></property>
+    </bean>
+
+    <bean id="listenerValues"
+          class="com.learningSpring.Listener">
+        <property name="creature" ref="LionBean"/>
+
+        <property name="name" value="Simba"/>
+        <property name="volume" value="40"/>
+    </bean>
+
+    <bean id="listenerViaProperties"
+          class="com.learningSpring.Listener">
+        <property name="creature" ref="SpaceMarineBean"/>
+
+        <property name="name" value="${listenerViaProperties.name}"/>
+        <property name="volume" value="${listenerViaProperties.volume}"/>
+    </bean>
+
+    <bean id="listenerList" class="com.learningSpring.Listener">
+        <property name="creatures">
+            <list value-type="ArrayList">
+                <ref bean="WolfBean"/>
+                <ref bean="LionBean"/>
+                <ref bean="SpaceMarineBean"/>
+            </list>
+        </property>
     </bean>
 </beans>

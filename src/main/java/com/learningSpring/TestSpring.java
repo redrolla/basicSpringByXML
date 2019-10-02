@@ -31,8 +31,29 @@ public class TestSpring {
          */
 
         Listener listener = context.getBean("listener",Listener.class);
-
         listener.listen();
+
+
+        /**
+         * DI via setter and reference
+         */
+        Listener listenerViaSetter = context.getBean("listenerViaSetter",Listener.class);
+        listenerViaSetter.listen();
+
+        Listener listnerValues = context.getBean("listenerValues",Listener.class);
+        listnerValues.listen();
+        System.out.print(listnerValues.getName() + " " + listnerValues.getVolume() + "\n");
+
+        Listener listenerViaProperties = context.getBean("listenerViaProperties",Listener.class);
+        listenerViaProperties.listen();
+        System.out.print(listenerViaProperties.getName() + " " + listenerViaProperties.getVolume() + "\n");
+
+        /**
+         * DI List
+         */
+
+        Listener listenerList = context.getBean("listenerList",Listener.class);
+        System.out.println(listenerList.getCreatures());
 
         context.close();
     }
