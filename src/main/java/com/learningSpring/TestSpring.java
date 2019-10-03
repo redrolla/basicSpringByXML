@@ -72,6 +72,25 @@ public class TestSpring {
         System.out.println();
         System.out.println(wolf1);
         System.out.println(wolf2);
+        System.out.println();
+
+        /**
+         * init-method calls method which you choose before creating a bean
+         * destroy-method after context is closed
+         * ! if bean is PROTOTYPE destroy-method is not called
+         * init-method called for singleton bean once, for prototype - each type .getBean is called
+         */
+
+        Creature boar = context2.getBean("BoarBean",Boar.class);
+        Creature boar2 = context2.getBean("BoarBean",Boar.class);
+        System.out.println(boar.roar());
+
+        Creature chicken = context2.getBean("ChickenBean",ChickenFromFactory.class);
+        Creature chicken2 = context2.getBean("ChickenBean",ChickenFromFactory.class);
+        System.out.println(chicken.roar() + " " + chicken);
+        System.out.println(chicken2.roar()+ " " + chicken2);
+
         context2.close();
+
     }
 }

@@ -14,4 +14,17 @@
     >
     </bean>
 
+    <bean id="BoarBean"
+          class="com.learningSpring.Boar"
+          init-method="initMethod"
+          destroy-method="destroyMethod"
+    >
+    </bean>
+
+    <bean id="ChickenBean"
+          class="com.learningSpring.ChickenFromFactory"
+          factory-method="getChickenFromFactoryInstance"
+    >
+    </bean>
+
 </beans>
