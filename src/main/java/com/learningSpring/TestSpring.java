@@ -56,5 +56,22 @@ public class TestSpring {
         System.out.println(listenerList.getCreatures());
 
         context.close();
+
+        /**
+         * Bean without scope has "singleton" scope by default, each time .getBean is called - the same object is returned
+         * Bean with scope "prototype" returnes new object each time .getBean is called
+         * WolfBean from context2 is prototype
+         */
+
+        ClassPathXmlApplicationContext context2 = new ClassPathXmlApplicationContext(
+                "applicationContext2.xml"
+        );
+
+        Creature wolf1 = context2.getBean("WolfBean",Wolf.class);
+        Creature wolf2 = context2.getBean("WolfBean",Wolf.class);
+        System.out.println();
+        System.out.println(wolf1);
+        System.out.println(wolf2);
+        context2.close();
     }
 }
