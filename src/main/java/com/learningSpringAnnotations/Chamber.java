@@ -1,6 +1,7 @@
 package com.learningSpringAnnotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,13 +10,13 @@ public class Chamber {
     private Tiger tiger;
     private Panther panther;
 
-    @Autowired
     public Chamber(Tiger tiger, Panther panther) {
         this.tiger = tiger;
         this.panther = panther;
     }
 
-    public Chamber(Animal animal){
+    @Autowired
+    public Chamber(@Qualifier("panther") Animal animal){
         this.animal = animal;
     }
 

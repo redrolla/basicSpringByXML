@@ -16,12 +16,14 @@ public class TestSpring {
         tiger1.roar();
 */
         System.out.println();
-        //Chamber chamber = context.getBean("chamber",Chamber.class);
-        //chamber.feedAnimal();
+        Chamber chamber = context.getBean("chamber",Chamber.class);
+        chamber.feedAnimal();
         //chamber.feedAllAnimals();
 
+/*
         Zoo zoo = context.getBean("zoo",Zoo.class);
         System.out.println(zoo.toString());
+*/
 
         context.close();
     }
