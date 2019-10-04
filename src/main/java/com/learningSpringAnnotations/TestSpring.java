@@ -24,7 +24,11 @@ public class TestSpring {
         Zoo zoo = context.getBean("zoo",Zoo.class);
         System.out.println(zoo.toString());
 */
+        System.out.println("Chamber volume = " + chamber.getVolume());
 
+
+        System.out.println(context.getBean("tiger",Tiger.class) == context.getBean("tiger",Animal.class));
+        System.out.println(context.getBean("panther",Panther.class) == context.getBean("panther",Panther.class));
         context.close();
     }
 }
