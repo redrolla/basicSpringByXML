@@ -1,4 +1,4 @@
-package com.learningSpring;
+package com.learningSpringXML;
 
 import java.util.ArrayList;
 import java.util.List;

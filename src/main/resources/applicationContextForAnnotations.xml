@@ -7,24 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+        <context:component-scan base-package="com.learningSpringAnnotations"/>
 
-    <bean id="WolfBean"
-          class="com.learningSpringXML.Wolf"
-          scope="prototype"
-    >
-    </bean>
-
-    <bean id="BoarBean"
-          class="com.learningSpringXML.Boar"
-          init-method="initMethod"
-          destroy-method="destroyMethod"
-    >
-    </bean>
-
-    <bean id="ChickenBean"
-          class="com.learningSpringXML.ChickenFromFactory"
-          factory-method="getChickenFromFactoryInstance"
-    >
-    </bean>
 
 </beans>

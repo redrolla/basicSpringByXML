@@ -1,4 +1,4 @@
-package com.learningSpring;
+package com.learningSpringXML;
 
 public class ChickenFromFactory implements Creature {
     @Override

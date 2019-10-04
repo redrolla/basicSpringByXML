@@ -1,4 +1,4 @@
-package com.learningSpring;
+package com.learningSpringXML;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,7 +13,7 @@ public class TestSpring {
          *  created Bean in context
          *  manualy create object Listener and manualy inject Bean into it
          *           <bean id="creature"
-         *          class="com.learningSpring.SpaceMarine">
+         *          class="com.learningSpringXML.SpaceMarine">
          *          </bean>
          */
         /*
@@ -25,7 +25,7 @@ public class TestSpring {
          * with DI
          * created Beans of Creature and Listener in context, injected Creature in Listener via reference
          *     <bean id="listener"
-         *         class="com.learningSpring.Listener"  >
+         *         class="com.learningSpringXML.Listener"  >
          *         <constructor-arg ref="creature"/>
          *     </bean>
          */

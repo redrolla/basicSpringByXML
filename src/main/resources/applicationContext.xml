@@ -10,29 +10,29 @@
     <context:property-placeholder location="classpath:listener.properties"/>
 
     <bean id="SpaceMarineBean"
-          class="com.learningSpring.SpaceMarine">
+          class="com.learningSpringXML.SpaceMarine">
     </bean>
 
     <bean id="WolfBean"
-          class="com.learningSpring.Wolf">
+          class="com.learningSpringXML.Wolf">
     </bean>
 
     <bean id="LionBean"
-          class="com.learningSpring.Lion">
+          class="com.learningSpringXML.Lion">
     </bean>
 
     <bean id="listener"
-        class="com.learningSpring.Listener"  >
+        class="com.learningSpringXML.Listener"  >
         <constructor-arg ref="SpaceMarineBean"/>
     </bean>
 
     <bean id="listenerViaSetter"
-          class="com.learningSpring.Listener">
+          class="com.learningSpringXML.Listener">
         <property name="creature" ref="WolfBean"></property>
     </bean>
 
     <bean id="listenerValues"
-          class="com.learningSpring.Listener">
+          class="com.learningSpringXML.Listener">
         <property name="creature" ref="LionBean"/>
 
         <property name="name" value="Simba"/>
@@ -40,14 +40,14 @@
     </bean>
 
     <bean id="listenerViaProperties"
-          class="com.learningSpring.Listener">
+          class="com.learningSpringXML.Listener">
         <property name="creature" ref="SpaceMarineBean"/>
 
         <property name="name" value="${listenerViaProperties.name}"/>
         <property name="volume" value="${listenerViaProperties.volume}"/>
     </bean>
 
-    <bean id="listenerList" class="com.learningSpring.Listener">
+    <bean id="listenerList" class="com.learningSpringXML.Listener">
         <property name="creatures">
             <list value-type="ArrayList">
                 <ref bean="WolfBean"/>

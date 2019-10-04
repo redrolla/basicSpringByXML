@@ -1,4 +1,4 @@
-package com.learningSpring;
+package com.learningSpringXML;
 
 public class Boar implements Creature{
     @Override
